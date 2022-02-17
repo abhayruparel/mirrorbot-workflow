@@ -58,6 +58,6 @@ jobs:
           cd loop || exit 1
           echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
           git add looper.txt
-          git commit -m "Workflow : Loop at $(TZ='Asia/Kolkata' date +"%b %e, %l:%M %p")"
-          git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
+          git commit --amend -m "Workflow : Loop at $(TZ='Asia/Kolkata' date +"%b %e, %l:%M %p")"
+          git push -qf https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
 
